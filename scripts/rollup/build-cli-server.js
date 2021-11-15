@@ -1,5 +1,4 @@
 import { join } from 'path';
-import external from 'rollup-plugin-node-externals';
 import { getStructure } from '../structure.js';
 import { plugins, rollupBuild } from './rollup.js';
 
@@ -7,7 +6,6 @@ async function buildCliServer() {
   const { root, dest } = await getStructure();
 
   const nodePlugins = [...plugins];
-  nodePlugins.push(external());
   const inputOptions = {
     input: join(root, 'cli.mjs'),
     plugins: nodePlugins,

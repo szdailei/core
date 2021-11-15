@@ -3,7 +3,6 @@ import { readFileSync } from 'fs';
 
 async function releaseInfo() {
   const packageJson = readFileSync('package.json', 'utf8');
-  const { packageJson } = await readPackageUp();
   const { repository, version, files } = packageJson;
 
   const fields = repository.url.split('/');

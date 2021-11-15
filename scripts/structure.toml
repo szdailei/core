@@ -1,5 +1,5 @@
 dest = "dist/"
-src = 'src/'
+destOfWeb = "dist/web/"
 
 srcOfServer = "src/server"
 srcOfClient = "src/client/"

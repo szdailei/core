@@ -6,7 +6,7 @@ import { Transform } from 'stream';
 import LRU from 'quick-lru';
 import mime from 'mime';
 import { sendResponse, notFound, forbidden } from '../http/response.js';
-import hasRight from '../security/has-right.js';
+import hasRight from '../security/index.js';
 import startServer from '../http/start-server.js';
 
 const MAX_CACHED_FILES = 50;

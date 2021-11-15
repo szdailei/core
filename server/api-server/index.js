@@ -14,10 +14,10 @@ async function resolveUrl(req, res, { method, url }, options) {
   notFound(res);
 }
 
-function apiServer(port, options) {
-  init(options.root);
+function apiServer(port, { storageRoot, loggerFileSuffix }) {
+  init({ storageRoot, loggerFileSuffix });
 
-  const server = startServer(port, options, resolveUrl);
+  const server = startServer(port, { storageRoot, loggerFileSuffix }, resolveUrl);
   return server;
 }
 

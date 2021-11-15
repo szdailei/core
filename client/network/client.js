@@ -1,8 +1,7 @@
-import { getApiServerPort, getApiServerPath, getDownloadServerPort } from '../../api-server-vars.js';
+import { getApiServerPort, getApiServerPath } from '../../api-server-vars.js';
 
 const clientVars = {
   apiServerEndPoint: undefined,
-  downloadServerUrl: undefined,
 };
 
 async function createErrorByRes(res) {
@@ -74,10 +73,6 @@ request.init = () => {
   const apiServerEndPoint = `${protocol}//${hostname}:${apiServerPort}${apiServerPath}`;
 
   clientVars.apiServerEndPoint = apiServerEndPoint;
-
-  const downloadServerPort = getDownloadServerPort(port);
-  const downloadServerUrl = `${protocol}//${hostname}:${downloadServerPort}`;
-  clientVars.downloadServerUrl = downloadServerUrl;
 };
 
 request.isFinished = () => !!clientVars.apiServerEndPoint;

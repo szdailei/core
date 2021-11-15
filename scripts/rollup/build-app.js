@@ -1,4 +1,5 @@
 import postcss from 'rollup-plugin-postcss';
+import { babel } from '@rollup/plugin-babel';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import shell from 'shelljs';
@@ -21,6 +22,15 @@ async function buildApp() {
       plugins: [],
     })
   );
+  browserPlugins.push(
+    babel({
+      babelHelpers: 'bundled',
+      plugins: ['@babel/plugin-syntax-jsx'],
+      presets: [['@babel/preset-env', { targets: { chrome: 90 } }], '@babel/preset-react'],
+      extensions: ['.jsx', '.tsx'],
+    })
+  );
+
   const inputOptions = {
     input: join(srcOfClient, 'app.jsx'),
     plugins: browserPlugins,

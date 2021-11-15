@@ -1,6 +1,5 @@
 import { rollup } from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import { babel } from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
@@ -15,12 +14,6 @@ const plugins = [
     '#!/usr/bin/env node': '',
   }),
   commonjs(),
-  babel({
-    babelHelpers: 'bundled',
-    presets: [['@babel/preset-env', { targets: { chrome: 90 } }], '@babel/preset-react'],
-    include: ['../**/src/**'],
-    extensions: ['.jsx', '.tsx'],
-  }),
 ];
 
 async function rollupBuild(inputOptions, outputOptions) {
