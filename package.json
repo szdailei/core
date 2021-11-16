@@ -23,11 +23,12 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.mjs,.cjs,.ts,.tsx",
     "stylelint": "stylelint \"src/client/**/*.{jsx,tsx}\"",
-    "release-info": "node cli-gen-release-note.js",
-    "to-github": "node cli-to-github.js",
-    "to-npm": "node cli-to-npm.js"
+    "release-info": "node node_modules/@szdailei/dev-scripts/cli/cli-gen-release-note.js",
+    "to-github": "node node_modules/@szdailei/dev-scripts/cli/cli-to-github.js",
+    "to-npm": "node node_modules/@szdailei/dev-scripts/cli/cli-to-npm.js"
   },
   "devDependencies": {
+    "@szdailei/dev-scripts": "^0.1.0",
     "commitizen": "^4.2.4",
     "conventional-changelog": "^3.1.24",
     "cz-conventional-changelog": "^3.3.0",
@@ -39,7 +40,6 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.4.1",
-    "shelljs": "^0.8.4",
     "stylelint": "^14.0.1",
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard": "^23.0.0"
