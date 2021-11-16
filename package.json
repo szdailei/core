@@ -7,7 +7,10 @@
     "szdailei"
   ],
   "license": "MIT",
-  "repository": "github:szdailei/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/szdailei/core.git"
+  },
   "homepage": "https://github.com/szdailei/core#readme",
   "main": "./index.js",
   "type": "module",
