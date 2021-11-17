@@ -18,6 +18,7 @@ function resolveRequest(req, res, options, callback) {
       res.writeHead(200, {
         'Access-Control-Allow-Headers': allowHeaders,
         'Access-Control-Allow-Methods': allowMethods,
+        'Access-Control-Allow-Origin': allowOrigin,
       });
       res.end();
       return;

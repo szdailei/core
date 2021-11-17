@@ -22,7 +22,6 @@ const Video = React.forwardRef(({ saveViewPortCallback, style, ...rest }, ref) =
   };
 
   const props = {
-    crossOrigin: 'anonymous',
     controls: true,
     preload: 'auto',
     ...rest,
