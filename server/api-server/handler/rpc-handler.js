@@ -1,4 +1,3 @@
-import http from 'http';
 import { sendResponse, forbidden } from '../../http/response.js';
 import resolvers from '../resolvers/index.js';
 
@@ -9,7 +8,7 @@ function handler(req, res, { data }) {
       return resolvers[i](data.params, req, res);
     }
   }
-  throw RangeError(http.STATUS_CODES[404]);
+  throw RangeError(`Not found resolver of command: ${data.command}`);
 }
 
 function rpcHandler(req, res, { method, url }, options) {

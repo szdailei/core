@@ -1,6 +1,6 @@
 {
   "name": "@szdailei/core",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Client and server core",
   "author": "Dai Lei <szdailei@gmail.com>",
   "license": "MIT",
@@ -23,12 +23,12 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.mjs,.cjs,.ts,.tsx",
     "stylelint": "stylelint \"client/**/*.{jsx,tsx}\"",
-    "release-info": "node node_modules/@szdailei/dev-scripts/cli/cli-gen-release-note.js",
+    "release": "node node_modules/@szdailei/dev-scripts/cli/cli-gen-release-note.js",
     "to-github": "node node_modules/@szdailei/dev-scripts/cli/cli-to-github.js",
     "to-npm": "node node_modules/@szdailei/dev-scripts/cli/cli-to-npm.js"
   },
   "devDependencies": {
-    "@szdailei/dev-scripts": "^0.4.0",
+    "@szdailei/dev-scripts": "^0.4.1",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "commitizen": "^4.2.4",
     "conventional-changelog": "^3.1.24",
