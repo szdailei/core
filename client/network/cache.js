@@ -1,22 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import request from './client.js';
 
 function useRemoteData(query) {
-  const [cache, setCache] = useState();
+  const [cache, setCache] = useState(undefined);
 
-  function refetch() {
-    setCache(null);
-  }
+  const refetch = useCallback(() => {
+    setCache(undefined);
+  }, []);
 
   useEffect(() => {
     let isMounted = true;
-
-    async function getRemoteData() {
-      const result = await request(query);
-      if (isMounted) setCache(result);
-    }
-
-    if (!cache) getRemoteData();
+    const getRemoteData = async () => {
+      if (!cache) {
+        const result = await request(query);
+        if (isMounted) {
+          setCache(result);
+        }
+      }
+    };
+    getRemoteData();
 
     return () => {
       isMounted = false;

@@ -11,7 +11,7 @@ async function resolveUrl(req, res, { method, url }, options) {
     return;
   }
 
-  const message = `Not found handler of ${url}, method: ${method}`
+  const message = `Not found handler of ${url}, method: ${method}`;
   const result = {
     errors: [
       {
