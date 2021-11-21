@@ -1,6 +1,6 @@
 {
   "name": "@szdailei/core",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Client and server core",
   "author": "Dai Lei <szdailei@gmail.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "to-npm": "node node_modules/@szdailei/dev-scripts/cli/cli-to-npm.js"
   },
   "devDependencies": {
-    "@szdailei/dev-scripts": "^0.5.0",
+    "@szdailei/dev-scripts": "^0.6.0",
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "commitizen": "^4.2.4",
     "conventional-changelog": "^3.1.24",
