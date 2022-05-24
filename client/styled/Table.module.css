@@ -1,0 +1,8 @@
+.tr {
+  border-bottom: 1px solid;
+}
+
+.table {
+  border-collapse: collapse;
+  margin: auto;
+}

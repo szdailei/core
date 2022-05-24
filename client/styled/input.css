@@ -1,0 +1,15 @@
+.input {
+  background-color: red;
+  font-size: 1em;
+  cursor: text;
+  outline: 0;
+  border-style: none none solid;
+}
+
+.radio {
+  background-color: blue;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.8em;
+}

@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from './styled.js';
 
 // eslint-disable-next-line react/prop-types
-const Label = React.forwardRef(({ style, ...rest }, ref) => {
-  const Styled = styled('label');
-  return <Styled {...rest} style={style} ref={ref} />;
-});
+// eslint-disable-next-line jsx-a11y/label-has-associated-control
+const Label = React.forwardRef(({ ...rest }, ref) => <label {...rest} ref={ref} />);
 
 export default Label;

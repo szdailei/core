@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '../styled/styled.js';
+import classes from './Section.module.css';
 
 /**
 @examples
@@ -15,13 +15,8 @@ const gridTemplateAreas = `
 </Section>
 */
 // eslint-disable-next-line react/prop-types
-const Section = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    display: 'grid',
-    ...style,
-  };
-  const Styled = styled('section');
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+const Section = React.forwardRef(({ className, ...rest }, ref) => (
+  <section className={`${classes.section} ${className}`} {...rest} ref={ref} />
+));
 
 export default Section;

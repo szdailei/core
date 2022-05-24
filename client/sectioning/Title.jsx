@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '../styled/styled.js';
+import classes from './Title.module.css';
 
 // eslint-disable-next-line react/prop-types
-const Title = React.forwardRef(({ children, style, ...rest }, ref) => {
+const Title = React.forwardRef(({ className, children, ...rest }, ref) => {
   document.title = children;
 
-  const objStyle = {
-    textAlign: 'center',
-    marginTop: '3em',
-    fontSize: '2.4em',
-    fontWeight: '700',
-    ...style,
-  };
-  const Styled = styled('div');
   return (
-    <Styled id="title" {...rest} style={objStyle} ref={ref}>
+    <div id="title" className={`${classes.title} ${className}`} {...rest} ref={ref}>
       {children}
-    </Styled>
+    </div>
   );
 });
 

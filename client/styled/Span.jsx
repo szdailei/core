@@ -1,10 +1,6 @@
 import React from 'react';
-import styled from './styled.js';
 
 // eslint-disable-next-line react/prop-types
-const Span = React.forwardRef(({ style, ...rest }, ref) => {
-  const Styled = styled('span');
-  return <Styled {...rest} style={style} ref={ref} />;
-});
+const Span = React.forwardRef(({ ...rest }, ref) => <span {...rest} ref={ref} />);
 
 export default Span;

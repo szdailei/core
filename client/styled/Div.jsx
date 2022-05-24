@@ -1,10 +1,6 @@
 import React from 'react';
-import styled from './styled.js';
 
 // eslint-disable-next-line react/prop-types
-const Div = React.forwardRef(({ style, ...rest }, ref) => {
-  const Styled = styled('div');
-  return <Styled {...rest} style={style} ref={ref} />;
-});
+const Div = React.forwardRef(({ ...rest }, ref) => <div {...rest} ref={ref} />);
 
 export default Div;

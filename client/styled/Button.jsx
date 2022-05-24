@@ -1,20 +1,10 @@
 import React from 'react';
-import styled from './styled.js';
+import classes from './Button.module.css';
 
 // eslint-disable-next-line react/prop-types
-const Button = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    cursor: 'pointer',
-    width: 'fit-content',
-    margin: '4px',
-    padding: '4px 8px',
-    borderRadius: '4px',
-    backgroundColor: '#f86e67',
-    ...style,
-  };
-
-  const Styled = styled('div');
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+const Button = React.forwardRef(({ className, ...rest }, ref) => (
+  // eslint-disable-next-line react/button-has-type
+  <button className={`${classes.button} ${className}`} {...rest} ref={ref} />
+));
 
 export default Button;

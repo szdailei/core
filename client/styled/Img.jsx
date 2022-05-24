@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import styled from './styled.js';
+import PropTypes from 'prop-types';
+import classes from './Img.module.css';
 
-const Img = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    display: 'block',
-    margin: 'auto',
-    ...style,
-  };
+const Img = React.forwardRef(({ className, alt, ...rest }, ref) => (
+  <img className={`${classes.img} ${className}`} alt={alt} {...rest} ref={ref} />
+));
 
-  const Styled = styled('img');
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+Img.propTypes = {
+  alt: PropTypes.string.isRequired,
+};
 
 export default Img;

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from './styled.js';
 
 /**
 @example
@@ -13,15 +12,11 @@ roles.forEach((role, key) => {
 <Select onChange={selectRole} options={options} />
 */
 // eslint-disable-next-line react/prop-types
-const Select = React.forwardRef(({ options, style, ...rest }, ref) => {
-  const Styled = styled('select');
-
-  return (
-    <Styled {...rest} style={style} ref={ref}>
-      {options}
-    </Styled>
-  );
-});
+const Select = React.forwardRef(({ options, ...rest }, ref) => (
+  <select {...rest} ref={ref}>
+    {options}
+  </select>
+));
 
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.node).isRequired,

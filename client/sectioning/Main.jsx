@@ -1,14 +1,9 @@
 import React from 'react';
-import styled from '../styled/styled.js';
+import classes from './Main.module.css';
 
 // eslint-disable-next-line react/prop-types
-const Main = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    gridArea: 'main',
-    ...style,
-  };
-  const Styled = styled('main');
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+const Main = React.forwardRef(({ className, ...rest }, ref) => (
+  <main className={`${classes.main} ${className}`} {...rest} ref={ref} />
+));
 
 export default Main;

@@ -1,14 +1,7 @@
 import React from 'react';
-import styled from './styled.js';
+import classes from './Flex.module.css';
 
 // eslint-disable-next-line react/prop-types
-const Flex = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    display: 'flex',
-    ...style,
-  };
-  const Styled = styled('div');
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+const Flex = React.forwardRef(({ ...rest }, ref) => <div className={classes.flex} {...rest} ref={ref} />);
 
 export default Flex;

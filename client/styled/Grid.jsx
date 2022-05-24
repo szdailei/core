@@ -1,16 +1,9 @@
 import React from 'react';
-import styled from './styled.js';
+import classes from './Grid.module.css';
 
 // eslint-disable-next-line react/prop-types
-const Grid = React.forwardRef(({ style, ...rest }, ref) => {
-  const objStyle = {
-    display: 'grid',
-    alignItems: 'center',
-    ...style,
-  };
-  const Styled = styled('div');
-
-  return <Styled {...rest} style={objStyle} ref={ref} />;
-});
+const Grid = React.forwardRef(({ className, ...rest }, ref) => (
+  <div className={`${classes.grid} ${className}`} {...rest} ref={ref} />
+));
 
 export default Grid;

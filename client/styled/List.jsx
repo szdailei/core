@@ -1,37 +1,32 @@
 import React from 'react';
-import styled from './styled.js';
+import classes from './List.module.css';
 
 // eslint-disable-next-line react/prop-types
-const List = React.forwardRef(({ ordered = false, depth = 1, children, style, ...rest }, ref) => {
-  let objStyle;
+const List = React.forwardRef(({ className, ordered = false, depth = 1, children, style, ...rest }, ref) => {
+  let classOfList;
 
   switch (depth) {
     case 2:
-      objStyle = {
-        fontSize: '0.93em',
-        ...style,
-      };
-      break;
-    case 3:
-      objStyle = {
-        fontSize: '0.93em',
-        ...style,
-      };
+      classOfList = classes.listDepth2And3;
       break;
     case 1:
     case 4:
     default:
-      objStyle = {
-        ...style,
-      };
       break;
   }
 
-  const Styled = ordered ? styled('ol') : styled('ul');
+  if (ordered) {
+    return (
+      <ol className={`${classOfList} ${className}`} {...rest} ref={ref}>
+        {children}
+      </ol>
+    );
+  }
+
   return (
-    <Styled {...rest} style={objStyle} ref={ref}>
+    <ul className={classOfList} {...rest} ref={ref}>
       {children}
-    </Styled>
+    </ul>
   );
 });
 

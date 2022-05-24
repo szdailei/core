@@ -1,0 +1,13 @@
+.textarea {
+  caret-color: red;
+  font-size: 1em;
+  transition: all 0.3s;
+  outline: 0;
+  border: 1px dashed;
+}
+
+.textarea:focus {
+  border: 1px double blue;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px blue;
+}
