@@ -1,6 +1,6 @@
 {
   "name": "@szdailei/core",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Client and server core",
   "author": "Dai Lei <szdailei@gmail.com>",
   "license": "MIT",
@@ -28,6 +28,6 @@
     "to-npm": "node node_modules/@szdailei/dev-scripts/cli/cli-to-npm.js"
   },
   "devDependencies": {
-    "@szdailei/dev-scripts": "^0.7.0"
+    "@szdailei/dev-scripts": "^0.8.0"
   }
 }
