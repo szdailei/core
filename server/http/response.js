@@ -21,13 +21,15 @@ function sendResponse(res, statusCode, statusMessage) {
   }
 }
 
-function notFound(res) {
+function notFound(res, url) {
   if (res.headersSent) {
     res.end();
     return;
   }
   res.setHeader('Content-Type', 'text/plain');
-  sendResponse(res, 404, http.STATUS_CODES[404]);
+
+  const msg = `${http.STATUS_CODES[404]} of ${url}`;
+  sendResponse(res, 404, msg);
 }
 
 function forbidden(res) {

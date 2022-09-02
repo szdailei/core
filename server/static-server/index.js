@@ -207,7 +207,7 @@ async function resolveUrl(req, res, { method, url }, options) {
   try {
     stats = await fs.promises.stat(path);
   } catch (error) {
-    notFound(res);
+    notFound(res, url);
     return;
   }
 
@@ -215,6 +215,7 @@ async function resolveUrl(req, res, { method, url }, options) {
     res.end();
     return;
   }
+
   if (stats.isFile()) {
     const mimeType = getMimeType(path);
     const encoding = getContentEncoding(req.headers['accept-encoding'], stats.size, mimeType);
@@ -231,7 +232,8 @@ async function resolveUrl(req, res, { method, url }, options) {
     resolveUrl(req, res, { method, url: join(url, 'index.html') }, options);
     return;
   }
-  notFound(res);
+
+  notFound(res, url);
 }
 
 function staticServer(port, options) {
